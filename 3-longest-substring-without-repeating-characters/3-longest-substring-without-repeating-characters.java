@@ -1,14 +1,17 @@
+//directly going to the l+1 position by storing map of character and its last position
 class Solution {
     public int lengthOfLongestSubstring(String s) {
+        //char and its pos
         HashMap<Character, Integer> mpp=new HashMap<Character, Integer>();
         int max=0;
         int r=0;
         int l=0;
         while(r<s.length())
-        {
+        {   //if key already, update key position if its at right
             if(mpp.containsKey(s.charAt(r))){
                 l=Math.max(mpp.get(s.charAt(r))+1,l);
             }
+            //keep adding new char and update max
             mpp.put(s.charAt(r),r);
             max=Math.max(r-l+1,max);
             r++;
@@ -17,7 +20,7 @@ class Solution {
     }
 }
 
-
+// sliding window (l to right)
 //Python Solution
 // class Solution(object):
 //     def lengthOfLongestSubstring(self, s):
