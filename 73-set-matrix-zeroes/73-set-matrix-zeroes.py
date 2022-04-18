@@ -1,3 +1,4 @@
+# O(1) space 2*O(m*n) time
 class Solution(object):
     def setZeroes(self, matrix):
         """
