@@ -3,28 +3,29 @@
  # 1 3 3 1 0 #4th row
  # +  0 1 3 3 1
  # =  1 4 6 4 1 #5th row
-# def generate(self, numRows):
-#         res = [[1]]
-#         for i in range(1, numRows):
-#             res += [map(lambda x, y: x+y, res[-1] + [0], [0] + res[-1])]
-#         return res[:numRows]
-
-#solution 2 
 class Solution(object):    
-    def generate(self, n):
-        list1 = []
-        for i in range (n):
-            temp_list=[]
-            #number of digit = row number
-            for j in range (i+1):
-                if j==0 or j==i:
-                    #default 1st and last value
-                    temp_list.append(1)
-                else:
-                    #sum from prev list
-                    temp_list.append (list1[i-1] [j-1] + list1[i-1] [j])
-            list1.append(temp_list)
-        return list1
+    def generate(self, numRows):
+            res = [[1]]
+            for i in range(1, numRows):
+                res += [map(lambda x, y: x+y, res[-1] + [0], [0] + res[-1])]
+            return res[:numRows]
+
+# #solution 2 
+# class Solution(object):    
+#     def generate(self, n):
+#         list1 = []
+#         for i in range (n):
+#             temp_list=[]
+#             #number of digit = row number
+#             for j in range (i+1):
+#                 if j==0 or j==i:
+#                     #default 1st and last value
+#                     temp_list.append(1)
+#                 else:
+#                     #sum from prev list
+#                     temp_list.append (list1[i-1] [j-1] + list1[i-1] [j])
+#             list1.append(temp_list)
+#         return list1
 
 
 # #solution 3 - recursion
