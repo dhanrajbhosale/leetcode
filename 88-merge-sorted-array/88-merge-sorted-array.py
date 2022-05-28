@@ -7,5 +7,15 @@ class Solution(object):
         :type n: int
         :rtype: None Do not return anything, modify nums1 in-place instead.
         """
-        nums1[m:]=nums2
-        nums1.sort()
+        #Solution 1
+        while n:
+            if m and nums1[m - 1] >= nums2[n - 1]: #nums1 start from last if num 1>2 add it to last
+                nums1[m + n - 1] = nums1[m - 1]
+                m -= 1                              #take next num1
+            else:
+                nums1[m + n - 1] = nums2[n - 1]   #add num2 to the last
+                n -= 1
+        
+        #Solution 2
+        # nums1[m:]=nums2
+        # nums1.sort()
