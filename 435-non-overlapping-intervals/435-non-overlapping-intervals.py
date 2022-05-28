@@ -1,15 +1,14 @@
 class Solution(object):
-    def eraseOverlapIntervals(self, A):
+    def eraseOverlapIntervals(self, intervals):
         """
         :type intervals: List[List[int]]
         :rtype: int
         """
-        out=[]
-        for a in sorted(A,key=lambda i:(i[0],i[1])):
-            if out and out[-1][1]>a[0]: #two are overlapping, need to skip any one
-                if out[-1][1]>a[1]:     #skip big range - if latest added is > current
-                    out[-1]=a
+        res = []
+        cnt = 0
+        for x in sorted(intervals, key = lambda x: x[1]): #sort by end
+            if res and x[0] < res[-1][1]: # remove overlapped one
+                cnt += 1
             else:
-                out+=[a]
-        return len(A)-len(out)
-                
+                res.append(x)
+        return cnt 
