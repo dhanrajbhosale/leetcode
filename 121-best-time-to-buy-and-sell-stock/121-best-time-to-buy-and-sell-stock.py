@@ -8,9 +8,7 @@ class Solution(object):
         mn=mx=prices[0]
         
         for i in range(len(prices)):
-            mx=max(mx,prices[i]) #shift max to right new max
-            if prices[i]<mn:
-                mx=mn=prices[i] #shift min to next min, & max = min as max should be at right of min
-            res=max(res,mx-mn) #update result
+            mn=min(mn,prices[i])
+            res=max(res,prices[i]-mn) 
         return res
         
