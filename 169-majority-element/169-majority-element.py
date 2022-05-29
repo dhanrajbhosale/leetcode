@@ -9,7 +9,7 @@ class Solution:
         #     if countEle[key] > len(nums) // 2:
         #         return key
         
-        # solution 3 Boyer Moore's Voting Algorith
+        # solution 3 Boyer Moore's Voting Algorith TC: O(n) SC: O(1)
         majorEle, count = nums[0], 0
     
         for num in nums:
