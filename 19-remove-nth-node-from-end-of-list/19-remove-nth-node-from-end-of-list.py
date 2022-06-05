@@ -8,7 +8,7 @@ class Solution:
         fp=sp= head
         for _ in range(n):
             fp=fp.next
-        if not fp: return head.next #for single [1]
+        if not fp: return head.next #The standard solution, but without a dummy extra node. Instead, simply handle the special case of removing the head right after the fast cursor got its head start
         while fp.next:
             fp=fp.next
             sp=sp.next
