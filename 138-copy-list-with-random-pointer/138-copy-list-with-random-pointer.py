@@ -6,7 +6,6 @@ class Node:
         self.next = next
         self.random = random
 """
-
 # optimum approach Time O(n), Space O(1)
 class Solution:
     def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
@@ -25,8 +24,7 @@ class Solution:
         while curr:
             if curr.random:
                 curr.next.random = curr.random.next
-            curr=curr.next.next
-        
+            curr=curr.next.next    
         # step 3 separate copy and original list
         curr = head
         copyHead = copy = head.next
@@ -37,18 +35,8 @@ class Solution:
                 copy.next = curr.next
             else:
                 copy.next = None
-            copy = copy.next
-            
-        return copyHead
-        
-        
-        
-        
-        
-        
-        
-        
-        
+            copy = copy.next            
+        return copyHead     
 
 # with hashmap Time: O(n) Space: O(n)
 # class Solution:
