@@ -21,7 +21,8 @@
 # approach 2
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        res=[]     
+        res=[]    
+        candidates.sort()
         def dfs(cands, subset, target):
             if target<0:
                 return
@@ -29,6 +30,8 @@ class Solution:
                 res.append(subset[:])
                 return
             for i in range (len(cands)):
+                if cands[i] > target:  #here  
+                    break
                 dfs(cands[i:], subset+[cands[i]], target-cands[i])
             
             
