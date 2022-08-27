@@ -1,13 +1,15 @@
-from itertools import permutations
+# Time(N*N!)
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
         res=[]
         def dfs(num, subset):
-            if len(num)<=0:
+            if not num:
                 res.append(subset[:])
                 return
             for i in range(len(num)):
-                dfs(num[:i]+num[i+1:], subset+[num[i]])    
+                subset.append(num[i])
+                dfs(num[:i]+num[i+1:], subset)    
+                subset.pop()
         dfs(nums, [])
         return res
         
