@@ -7,9 +7,7 @@ class Solution:
                 res.append(subset[:])
                 return
             for i in range(len(num)):
-                subset.append(num[i])
-                dfs(num[:i]+num[i+1:], subset)    
-                subset.pop()
+                dfs(num[:i]+num[i+1:], subset+[num[i]])    
         dfs(nums, [])
         return res
         
