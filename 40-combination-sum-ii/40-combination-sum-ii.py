@@ -11,8 +11,8 @@ class Solution:
             for i in range (len(cands)):
                 if i > 0 and cands[i] == cands[i-1]:
                     continue
-                # if target<cands[i]:
-                #     break
+                if target<cands[i]:
+                    break
                 dfs(cands[i+1:], subset+[cands[i]], target-cands[i])
             
         dfs(candidates, [], target)    
