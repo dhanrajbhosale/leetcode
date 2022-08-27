@@ -32,8 +32,9 @@ class Solution:
             for i in range (len(cands)):
                 if cands[i] > target:  #here  
                     break
-                dfs(cands[i:], subset+[cands[i]], target-cands[i])
-            
+                # if cands[i]>target:
+                #     break
+                dfs(cands[i:], subset+[cands[i]], target-cands[i])    
             
         dfs(candidates, [], target)
         return res    
