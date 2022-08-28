@@ -1,6 +1,6 @@
 class Solution:
     def partition(self, s: str) -> List[List[str]]:
-        @functools.lru_cache(len(s))
+
         def dfs(start):
             if start == len(s):
                 return [[]]
