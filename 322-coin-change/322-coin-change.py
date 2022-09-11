@@ -23,7 +23,7 @@ class Solution(object):
         # minimum=dfs(amount)       
         # return minimum if minimum < float('inf') else -1
     
-        # Solution 2: Bottom Up approach with DP
+        # Solution 2: Bottom Up approach with DP Time O(amount* coins) space O(amoun+1)
         dp=[amount+1]*(amount+1) # dp with max value that wont be iin calculation (infinite, but here amount+1 will work)
         dp[0]=0 # base case: for amount 0, 0 coins required        
         for a in range(1, amount+1): # compute coins required for all amount
