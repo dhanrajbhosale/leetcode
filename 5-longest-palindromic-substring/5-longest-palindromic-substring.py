@@ -7,7 +7,7 @@ class Solution:
         
         for i in range(len(s)):
             dp[i][i] = True
-        res=s[0]
+        rL, rR=0,1
         
         # fill only half table as i always should be < j
         for j in range(len(s)):
@@ -15,9 +15,9 @@ class Solution:
                 # in between it is pali or just 2 char so pali
                 if s[i]==s[j] and (dp[i+1][j-1] or j-i==1):
                     dp[i][j]=True
-                    if j-i+1>len(res):
-                        res=s[i:j+1]
-        return res
+                    if j-i+1>rR-rL:
+                        rL,rR=i,j+1
+        return s[rL:rR]
         
         
     # O(n^2) 
