@@ -9,12 +9,12 @@ class Solution:
         res = [0]
         def dfs(root):
             if not root:
-                return -1
+                return 0
             # calculate height of the left and right side
             left = dfs(root.left)
             right = dfs(root.right)
             # store max PATH for that path
-            res[0]= max(res[0], 2 +left + right)
+            res[0]= max(res[0], left + right)
             
             # return the max HEIGHT of that node
             return 1 + max(left, right)
