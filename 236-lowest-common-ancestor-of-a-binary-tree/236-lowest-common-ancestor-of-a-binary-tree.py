@@ -6,22 +6,14 @@
 #         self.right = None
 
 class Solution:
+    # traverse till you find p and q, and then revert back.. stop when you will get both p and q back and return that node
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-        if not root:
+        if not root or root==p or root==q:
             return root
-        if root==p:
-            return p
-        if root==q:
-            return q
-        if not root.left and not root.right:
-            return
-        
         left = self.lowestCommonAncestor(root.left, p, q)
-        right = self.lowestCommonAncestor(root.right, p, q)
-        
+        right = self.lowestCommonAncestor(root.right, p, q)     
         if not left:
             return right
         if not right:
-            return left
-        
+            return left      
         return root
