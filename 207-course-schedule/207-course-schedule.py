@@ -15,6 +15,7 @@ class Solution:
             vis.add(node)
             for i in adj[node]:
                 if not dfs(i): return False
+            vis.remove(node)
             adj[node]=[]
             return True
         # to consider disconnected graphs
