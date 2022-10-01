@@ -4,10 +4,10 @@ class Solution:
         # using BFS (Kahn's Algorithm)
         
         inDegree = [0 for i in range(numCourses)]
-        adj = {i:set() for i in range(numCourses)}
+        adj = {i:[] for i in range(numCourses)}
         res=[]
         for crs, pre in prerequisites:
-            adj[crs].add(pre)
+            adj[crs].append(pre)
             inDegree[pre]+=1
         q = collections.deque()
         
