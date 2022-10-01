@@ -19,12 +19,7 @@ class Solution:
                     if n not in visited:
                         bfs.appendleft(n)                 
         return True
-            
-        
-        
-        
-        
-        
+       
         
         # detect cycle using DFS
         # like normal dfs, we dont need to avoid parent as adj list are not given.. we are creating that list using prer list so already parent node is not present.
