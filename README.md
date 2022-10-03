@@ -1,4 +1,4 @@
 # leetcode
-Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub](https://github.com/QasimWani/LeetHub)
+Collection of LeetCode problems and my solutions!
 
 ![Leetcode Stats](https://leetcard.jacoblin.cool/dhanrajbhosale7797?theme=dark)
