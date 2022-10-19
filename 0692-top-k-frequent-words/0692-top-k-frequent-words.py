@@ -1,8 +1,8 @@
 class Solution:
     def topKFrequent(self, words: List[str], n: int) -> List[str]:
-        words.sort()
         dic = collections.defaultdict(int)
         for word in words:
             dic[word]+=1
-        dic = [k for k, v in sorted(dic.items(), key= lambda item: item[1], reverse=True)]
+        # sort the dict in desc order based on frequency, f frequency equal then sort dict in asc order based on alphabet.
+        dic = sorted(dic, key= lambda item: (-dic[item], item))
         return dic [:n]
