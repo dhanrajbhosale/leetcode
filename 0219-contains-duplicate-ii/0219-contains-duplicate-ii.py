@@ -6,3 +6,4 @@ class Solution:
                 return True
             dic[v]=i
         return False
+    
