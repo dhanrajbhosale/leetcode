@@ -4,9 +4,5 @@ class Solution:
         dic_set = set()
         for num in arr:
             dic[num]+=1
-        for num in dic.values():
-            if num in dic_set:
-                return False
-            dic_set.add(num)
-        return True
+        return len(dic.values()) == len(set(dic.values()))
         
