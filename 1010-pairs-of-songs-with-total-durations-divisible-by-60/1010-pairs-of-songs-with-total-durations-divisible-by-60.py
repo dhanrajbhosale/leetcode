@@ -2,11 +2,11 @@ class Solution:
     def numPairsDivisibleBy60(self, time: List[int]) -> int:
         dic = collections.defaultdict(int)
         cnt=0
-        dic[60]=0
+        # iterate and cal mod, if (60-currMod) alredy seen, then can pair up. so update cnt with (60-currMod) freq. and also +1 freq of currMod
         for t in time:
-            m = t%60 
-            n = m if m else 60
-            if 60-n in dic:
-                cnt+=dic[60-n]
-            dic[m] += 1
+            currMod = t%60 
+            # special case to deal with currMod=0
+            n = currMod if currMod else 60
+            cnt+=dic[60-n]
+            dic[currMod] += 1
         return cnt
