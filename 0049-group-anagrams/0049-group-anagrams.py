@@ -5,3 +5,4 @@ class Solution:
             dic["".join(sorted(v))].append(v)
         return dic.values()
     
+    
