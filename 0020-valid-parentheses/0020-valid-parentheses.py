@@ -1,13 +1,13 @@
 class Solution:
     def isValid(self, s: str) -> bool:
+        d = {'(':')', '{':'}','[':']'}
         stack = collections.deque()
-        for c in s:
-            if c in '([{':
-                stack.append(c)
-            else:
-                if len(stack)==0:
-                    return False
-                i = stack.pop()
-                if (i=='(' and c!=')') or (i=='[' and c!=']') or (i=='{' and c!='}'):
-                    return False
-        return False if len(stack) else True
+        for i in s:
+            if i in d:  # 1
+                stack.append(i)
+            elif len(stack) == 0 or d[stack.pop()] != i:  # 2
+                return False
+        return len(stack) == 0 # 3
+# 1. if it's the left bracket then we append it to the stack
+# 2. else if stack is empty(meaning no matching left bracket), or the left bracket doesn't match
+# 3. finally check if the stack still contains unmatched left bracket
