@@ -1,5 +1,6 @@
 class Solution:
     # sol1 dp bottom up TC O(n) SC O(n)
+    @functools.lru_cache()
     def climbStairs(self, n: int) -> int:
         dp=[None]*(n+2)
         dp[1], dp[2]= 1, 2
