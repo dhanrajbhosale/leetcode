@@ -1,18 +1,7 @@
 class Solution:
     def isToeplitzMatrix(self, matrix: List[List[int]]) -> bool:
-        m, n = len(matrix), len(matrix[0])
-        visited=[[0]*n for _ in range(m)]
-        
-        # check for every index with his diagonals
-        for i in range(m):
-            for j in range(n):
-                x, y = i, j
-                curr = matrix[i][j]
-                # check if curr index's diagonal elements are equal to curr
-                while x<m and y<n and not visited[x][y]:
-                    visited[x][y]=1
-                    if curr != matrix[x][y]: # if any not equal return false
-                        return False
-                    x+=1
-                    y+=1
+        for i in range(len(matrix)-1):
+            for j in range(len(matrix[0])-1):
+                if matrix[i][j] != matrix[i+1][j+1]:
+                    return False
         return True
