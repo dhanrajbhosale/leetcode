@@ -1,6 +1,6 @@
 class Solution:
     def solveSudoku(self, board: List[List[str]]) -> None:
-        assert(self.solve(board))
+        self.solve(board)
     
     def solve(self, board: List[List[str]])->bool:
         for r in range(len(board[0])): # solve row by row
