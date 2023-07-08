@@ -12,7 +12,9 @@ class TrieNode:
         cur.EndOfWord = True
 
 class Solution:
-    num_of_words = 0
+    def __init__(self):
+        self.num_of_words = 0
+        
     def findWords(self, board: List[List[str]], words: List[str]) -> List[str]:
         self.num_of_words = len(words)
         root = TrieNode()
