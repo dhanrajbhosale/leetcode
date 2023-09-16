@@ -1,5 +1,5 @@
-
 # Standard Djikstraa
+# O (E * log V)
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
         
@@ -26,6 +26,4 @@ class Solution:
             
         # if not visited all nodes, return -1
         return ans if len(visited)==n else -1
-            
-            
             
