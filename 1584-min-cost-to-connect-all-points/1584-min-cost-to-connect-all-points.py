@@ -3,8 +3,8 @@ from collections import defaultdict
 class Solution:
     def minCostConnectPoints(self, points: List[List[int]]) -> int:
         n = len(points)
-        # graph = defaultdict(list)
-        graph = {i : [] for i in range(n)}
+        graph = defaultdict(list)
+        # graph = {i : [] for i in range(n)}
         def get_manhattan_dist(p1, p2):
             return abs(p1[0]-p2[0]) + abs(p1[1]-p2[1])
         
@@ -32,6 +32,7 @@ class Solution:
             
             for neiCost, nei in graph[i]:
                 if nei not in visited:
+                    # he heap will be sorted based on the first element of each item in the heap 
                     heapq.heappush(minHeap, [neiCost, nei])
             
         return res
