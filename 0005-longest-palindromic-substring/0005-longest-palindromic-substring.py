@@ -1,5 +1,6 @@
 class Solution:
     # DP Solution, bottom Up
+    # time O(n^2) space O(n^2)
     # the row and col in the dp table represent the slicing index on the string s
     def longestPalindrome(self, s: str) -> str:
         dp=[[False]*len(s) for _ in range (len(s))]
@@ -18,7 +19,7 @@ class Solution:
         return s[rL:rR]
         
         
-    # O(n^2) 
+    # time O(n^2) space O(1)
 #     def longestPalindrome(self, s: str) -> str:
 #         resLen=0
 #         rL=0
